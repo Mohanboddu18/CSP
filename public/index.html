@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Aquaculture Guardian</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🛠 Smart Aquaculture Guardian</h1>
+    <p>Real-time Monitoring of Fan Operation & Alerts</p>
+
+    <div class="buttons">
+      <button class="start" onclick="startFan()">✅ Start Fan</button>
+      <button class="fail" onclick="simulateFailure()">❌ Simulate Failure</button>
+    </div>
+
+    <div id="status"></div>
+  </div>
+
+  <script>
+    function startFan() {
+      document.getElementById("status").innerText = "✅ Fan is running normally.";
+    }
+
+    function simulateFailure() {
+      fetch("/send-failure-alert", { method: "POST" })
+        .then((res) => res.json())
+        .then((data) => {
+          document.getElementById("status").innerText = "📲 " + data.message;
+        })
+        .catch((err) => {
+          document.getElementById("status").innerText = "❌ Failed to send alert.";
+        });
+    }
+  </script>
+</body>
+</html>

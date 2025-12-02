@@ -1,0 +1,105 @@
+/* Reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(120deg, #89f7fe, #66a6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Glassmorphic container */
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  color: #fff;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Headings */
+.container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.container p {
+  font-size: 0.95rem;
+  color: white;
+  margin-bottom: 30px;
+}
+
+/* Buttons container */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* Fancy buttons */
+button {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start {
+  background: linear-gradient(145deg, #00c853, #64dd17);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4);
+}
+
+.start:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 200, 83, 0.5);
+}
+
+.fail {
+  background: linear-gradient(145deg, #d50000, #ff1744);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 23, 68, 0.4);
+}
+
+.fail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 23, 68, 0.5);
+}
+
+/* Status display */
+#status {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #fffde7;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Smooth entrance animation */
+@keyframes fadeIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
